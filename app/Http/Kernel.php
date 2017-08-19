@@ -56,5 +56,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        // the below middleware run every HTTP REQUEST made on the application only when called on a specified route 
+        'jwt.auth' => \App\Http\Middleware\VerifyJWTToken::class,
     ];
 }
